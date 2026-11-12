@@ -1,0 +1,63 @@
+# Настройки админки Decap CMS.
+# Вход через Netlify Identity + Git Gateway: владельцу сайта не нужен аккаунт GitHub,
+# он входит по e-mail и паролю.
+
+backend:
+  name: git-gateway
+  branch: main
+
+locale: ru
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site
+    label: Мой сайт
+    files:
+      - name: settings
+        label: Основные настройки
+        file: content/settings.json
+        fields:
+          - { name: name, label: Название заведения, widget: string }
+          - { name: tagline, label: Короткий слоган, widget: string, required: false }
+          - { name: primary_color, label: Главный цвет сайта, widget: color, default: "#d9381e" }
+          - { name: hero_title, label: Заголовок на первом экране, widget: string }
+          - { name: hero_text, label: Текст на первом экране, widget: text }
+          - { name: hero_image, label: Фото на первом экране, widget: image, required: false }
+          - { name: about_title, label: Заголовок раздела "О нас", widget: string, required: false }
+          - { name: about_text, label: Текст "О нас", widget: text, required: false }
+          - { name: about_image, label: Фото "О нас", widget: image, required: false }
+          - { name: phone, label: Телефон, widget: string }
+          - { name: order_link, label: Ссылка для заказа (необязательно), widget: string, required: false }
+          - { name: address, label: Адрес, widget: string }
+          - { name: map_link, label: Ссылка на карту (Google Maps), widget: string, required: false }
+          - name: hours
+            label: Часы работы
+            widget: list
+            fields:
+              - { name: days, label: Дни, widget: string }
+              - { name: time, label: Время, widget: string }
+          - { name: instagram, label: Instagram (ссылка), widget: string, required: false }
+          - { name: facebook, label: Facebook (ссылка), widget: string, required: false }
+          - { name: telegram, label: Telegram (ссылка), widget: string, required: false }
+          - { name: currency, label: Валюта, widget: string, default: "грн" }
+
+      - name: menu
+        label: Меню
+        file: content/menu.json
+        fields:
+          - name: categories
+            label: Разделы меню
+            label_singular: Раздел
+            widget: list
+            fields:
+              - { name: name, label: Название раздела, widget: string }
+              - name: items
+                label: Блюда
+                label_singular: Блюдо
+                widget: list
+                fields:
+                  - { name: title, label: Название, widget: string }
+                  - { name: description, label: Описание, widget: text, required: false }
+                  - { name: price, label: Цена, widget: string }
+                  - { name: image, label: Фото, widget: image, required: false }
