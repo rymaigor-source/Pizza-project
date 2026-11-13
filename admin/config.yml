@@ -4,7 +4,14 @@
 
 backend:
   name: git-gateway
+  repo: rymaigor-source/Pizza-project
   branch: main
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/d679bb71-88e9-440c-8b6f-07758072e4e7/pkce
+  auth_token_endpoint: /sites/d679bb71-88e9-440c-8b6f-07758072e4e7/token
+  gateway_url: https://gateway.decapbridge.com
+
 
 locale: ru
 media_folder: images/uploads
