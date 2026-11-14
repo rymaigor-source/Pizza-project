@@ -50,6 +50,20 @@ collections:
           - { name: currency, label: Валюта, widget: string, default: "грн" }
 
       - name: menu
+                - { name: orders_enabled, label: "Заказы: включить корзину на сайте", widget: boolean, default: true }
+          - name: order_mode
+            label: "Заказы: куда отправлять заказ"
+            widget: select
+            default: whatsapp
+            options:
+              - { label: WhatsApp, value: whatsapp }
+              - { label: Telegram, value: telegram }
+              - { label: E-mail, value: email }
+              - { label: "Webhook (Poster, Make, Zapier, n8n)", value: webhook }
+          - { name: order_whatsapp, label: "Заказы: номер WhatsApp (с кодом страны, например 380501234567)", widget: string, required: false }
+          - { name: order_telegram, label: "Заказы: Telegram (имя без @)", widget: string, required: false }
+          - { name: order_email, label: "Заказы: e-mail для заказов", widget: string, required: false }
+          - { name: order_webhook_url, label: "Заказы: адрес webhook (начинается с https://)", widget: string, required: false }
         label: Меню
         file: content/menu.json
         fields:
