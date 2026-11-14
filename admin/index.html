@@ -3,10 +3,77 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Управление сайтом</title>
+  <title>Пиццерия</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <header class="topbar">
+    <a href="#top" class="brand" id="brand-name"></a>
+    <nav class="nav">
+      <a href="#menu">Меню</a>
+      <a href="#about" id="nav-about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a href="#" class="btn btn-small" id="call-top">Позвонить</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-inner">
+        <h1 id="hero-title"></h1>
+        <p id="hero-text"></p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn">Смотреть меню</a>
+          <a href="#" class="btn btn-ghost" id="order-btn">Заказать</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <h2>Меню</h2>
+      <div id="menu-tabs" class="tabs"></div>
+      <div id="menu-list"></div>
+    </section>
+
+    <section class="section section-alt" id="about">
+      <div class="about-grid">
+        <div>
+          <h2 id="about-title"></h2>
+          <p id="about-text"></p>
+        </div>
+        <img id="about-image" alt="" hidden>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <h2>Контакты</h2>
+      <div class="contacts-grid">
+        <div class="card">
+          <h3>Адрес</h3>
+          <p id="address"></p>
+          <a href="#" class="link" id="map-link" target="_blank" rel="noopener" hidden>Открыть на карте</a>
+        </div>
+        <div class="card">
+          <h3>Часы работы</h3>
+          <ul id="hours" class="hours"></ul>
+        </div>
+        <div class="card">
+          <h3>Связаться</h3>
+          <p><a href="#" class="link" id="phone-link"></a></p>
+          <p class="socials" id="socials"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span id="footer-text"></span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>
